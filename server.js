@@ -1,6 +1,7 @@
 import express from "express";
 
 const app = express();
+app.set("view engine", "ejs");
 const PORT = 3000;
 
 const projects = [
@@ -14,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.send("About");
+  res.render("about", { title: "About" });
 });
 
 app.get("/contact", (req, res) => {
